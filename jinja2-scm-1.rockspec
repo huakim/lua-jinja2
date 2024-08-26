@@ -1,4 +1,4 @@
-package = 'lupa'
+package = 'jinja2'
 version = 'scm-1'
 local url='github.com/orbitalquark/lupa'
 source = {
