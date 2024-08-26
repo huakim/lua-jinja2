@@ -1,6 +1,6 @@
 # lua-jinja2
 
-lua-jinja2 is a [Jinja2][] template engine implementation written in Lua and supports
+luajinja is a [Jinja2][] template engine implementation written in Lua and supports
 Lua syntax within tags and variables.
 
 luajinja was forked from  and was sponsored by the [Library of the University of Antwerp][].
