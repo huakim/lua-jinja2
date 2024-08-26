@@ -13,7 +13,7 @@ luajinja was forked from https://github.com/orbitalquark/lupa and was sponsored 
 Luajinja has the following requirements:
 
 * [Lua][] 5.1, 5.2, 5.3 or 5.4.
-* [LuaJit][] 2.1
+* [LuaJIT][] 2.1
 * The [LPeg][] library.
 
 [Lua]: https://www.lua.org
