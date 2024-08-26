@@ -1,9 +1,9 @@
-# Lupa
+# lua-jinja2
 
-Lupa is a [Jinja2][] template engine implementation written in Lua and supports
+lua-jinja2 is a [Jinja2][] template engine implementation written in Lua and supports
 Lua syntax within tags and variables.
 
-Lupa was sponsored by the [Library of the University of Antwerp][].
+lua-jinja2 was forked from  and was sponsored by the [Library of the University of Antwerp][].
 
 [Jinja2]: http://jinja.pocoo.org
 [Library of the University of Antwerp]: http://www.uantwerpen.be/
