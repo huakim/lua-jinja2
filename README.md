@@ -1,4 +1,4 @@
-# lua-jinja2
+# luajinja
 
 luajinja is a [Jinja2][] template engine implementation written in Lua and supports
 Lua syntax within tags and variables.
