@@ -1,6 +1,6 @@
-package = 'jinja2'
+package = 'luajinja'
 version = 'scm-1'
-local url='github.com/huakim/lua-jinja2'
+local url='github.com/huakim/luajinja'
 source = {
   url = "git://" .. url .. ".git",
  }
