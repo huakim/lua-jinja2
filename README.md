@@ -1,6 +1,6 @@
 # luajinja
 
-luajinja is a [Jinja2][] template engine implementation written in Lua and supports
+luajinja is a [Jinja2](http://jinja.pocoo.org) template engine implementation written in Lua and supports
 Lua syntax within tags and variables.
 
 luajinja was forked from https://github.com/orbitalquark/lupa and was sponsored by the [Library of the University of Antwerp][].
@@ -12,8 +12,8 @@ luajinja was forked from https://github.com/orbitalquark/lupa and was sponsored 
 
 Luajinja has the following requirements:
 
-* [Lua][] 5.1, 5.2, 5.3 or 5.4.
-* [LuaJIT](http://luajit.org/) 2.1
+* [Lua](https://lua.org/) 5.1, 5.2, 5.3 or 5.4.
+* [LuaJIT](https://luajit.org/) 2.1
 * The [LPeg][] library.
 
 [Lua]: https://www.lua.org
