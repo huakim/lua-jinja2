@@ -3,14 +3,14 @@
 lua-jinja2 is a [Jinja2][] template engine implementation written in Lua and supports
 Lua syntax within tags and variables.
 
-lua-jinja2 was forked from  and was sponsored by the [Library of the University of Antwerp][].
+luajinja was forked from  and was sponsored by the [Library of the University of Antwerp][].
 
 [Jinja2]: http://jinja.pocoo.org
 [Library of the University of Antwerp]: http://www.uantwerpen.be/
 
 ## Requirements
 
-Lupa has the following requirements:
+Luajinja has the following requirements:
 
 * [Lua][] 5.1, 5.2, or 5.3.
 * The [LPeg][] library.
@@ -20,21 +20,23 @@ Lupa has the following requirements:
 
 ## Download
 
-Lupa releases can be found [here][].
+Luajinja releases can be found [here][].
 
-[here]: https://github.com/orbitalquark/lupa/releases
+[here]: https://github.com/huakim/luajinja/releases
 
 ## Installation
 
-Unzip Lupa and place the "lupa.lua" file in your Lua installation's
+Unzip luajinja and place the "lupa.lua" file in your Lua installation's
 `package.path`. This location depends on your version of Lua. Typical locations
 are listed below.
 
-* Lua 5.1: */usr/local/share/lua/5.1/* or */usr/local/share/lua/5.1/*
-* Lua 5.2: */usr/local/share/lua/5.2/* or */usr/local/share/lua/5.2/*
-* Lua 5.3: */usr/local/share/lua/5.3/* or */usr/local/share/lua/5.3/*
+* Lua 5.1: */usr/share/lua/5.1/* or */usr/local/share/lua/5.1/*
+* Lua 5.2: */usr/share/lua/5.2/* or */usr/local/share/lua/5.2/*
+* Lua 5.3: */usr/share/lua/5.3/* or */usr/local/share/lua/5.3/*
+* Lua 5.4: */usr/share/lua/5.4/* or */usr/local/share/lua/5.4/*
+* LuaJit 2.1: */usr/share/lua/5.1/* or */usr/local/share/lua/5.1/*
 
-You can also place the *lupa.lua* file wherever you'd like and add it to Lua's
+You can also place the *luajinja.lua* file wherever you'd like and add it to Lua's
 `package.path` manually in your program. For example, if Lupa was placed in a
 */home/user/lua/* directory, it can be used as follows:
 
@@ -42,19 +44,19 @@ You can also place the *lupa.lua* file wherever you'd like and add it to Lua's
 
 ## Usage
 
-Lupa is simply a Lua library. Its `lupa.expand()` and `lupa.expand_file()`
-functions may called to process templates. For example:
+Luajinja is simply a Lua library, which can process templates by calling
+`luajinja.expand()`, as described below:
 
-    lupa = require('lupa')
-    lupa.expand("hello {{ s }}!", {s = "world"}) --> "hello world!"
-    lupa.expand("{% for i in {1, 2, 3} %}{{ i }}{% endfor %}") --> 123
+    luajinja = require('luajinja')
+    luajinja.expand("hello {{ s }}!", {s = "world"}) --> "hello world!"
+    luajinja.expand("{% for i in {1, 2, 3} %}{{ i }}{% endfor %}") --> 123
 
-By default, Lupa loads templates relative to the current working directory. This
+By default, Luajinja loads templates relative to the current working directory. This
 can be changed by reconfiguring Lupa:
 
-    lupa.expand_file('name') --> expands template "./name"
-    lupa.configure{loader = lupa.loaders.filesystem('path/to/templates')}
-    lupa.expand_file('name') --> expands template "path/to/templates/name"
+    luajinja.expand_file('name') --> expands template "./name"
+    luajinja.configure{loader = luajinja.loaders.filesystem('path/to/templates')}
+    luajinja.expand_file('name') --> expands template "path/to/templates/name"
 
 See Lupa's [API documentation][] for more information.
 
@@ -159,19 +161,19 @@ described in the following sections.
 
 ### API Differences
 
-* Lupa has a much simpler API consisting of just four functions and three
+* Luajinja has a much simpler API consisting of just four functions and three
   fields:
 
-  + `lupa.expand()`: Expands a string template subject to an environment.
-  + `lupa.expand_file()`: Expands a file template subject to an environment.
-  + `lupa.configure()` Configures delimiters and template options.
-  + `lupa.reset()`: Resets delimiters and options to their defaults.
-  + `lupa.env`: The default environment for templates.
-  + `lupa.filters`: The set of available filters (`escape`, `join`, etc.).
-  + `lupa.tests`: The set of available tests (`is_odd`, `is_defined`, etc.).
+  + `luajinja.expand()`: Expands a string template subject to an environment.
+  + `luajinja.expand_file()`: Expands a file template subject to an environment.
+  + `luajinja.configure()` Configures delimiters and template options.
+  + `luajinja.reset()`: Resets delimiters and options to their defaults.
+  + `luajinja.env`: The default environment for templates.
+  + `luajinja.filters`: The set of available filters (`escape`, `join`, etc.).
+  + `luajinja.tests`: The set of available tests (`is_odd`, `is_defined`, etc.).
 
 * There is no bytecode caching.
-* Lupa has no extension mechanism. Instead, modify `lupa.env`, `lupa.filters`,
+* Later will be added extension mechanism to luajinja. By now, modify `lupa.env`, `lupa.filters`,
   and `lupa.tests` directly. However, the parser cannot be extended.
 * Sandboxing is not supported, although `lupa.env` is safe by default (`io`,
   `os.execute`, `os.remove`, etc. are not available).
