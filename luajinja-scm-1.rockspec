@@ -16,7 +16,7 @@ and supports Lua syntax within tags and variables.
  }
 build = {
   modules = {
-   ["lupa"] = "lupa.lua",
+   ["luajinja"] = "luajinja.lua",
   },
   type = "builtin",
  }
